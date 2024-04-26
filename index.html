@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="app/images/logo/Favicon.svg" type="image/x-icon">
+
+    <!-- fonts link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- css  -->
+    <link rel="stylesheet" href="app/scss/style.css">
+
+    <!-- icons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</head>
+
+<body>
+    <div id="preloadder">
+
+    </div>
+    <header class="header" id="header">
+       
+        </div>
+        <div class="menu-hamburger" id="toggle">
+
+        </div>
+        <nav class="navbar" id="navbar">
+            <ul class="navbar-list" id="primary-navbar" data-visiable="false">
+                <li><a href="#banner" class="navbar-links">The Couplers</a></li>
+                <li><a href="#features" class="navbar-links">Feature Envy</a></li>
+                <li><a href="#courses" class="navbar-links">Inappropriate Intimacy</a></li>
+                <li><a href="#expert" class="navbar-links">Message Chain</a></li>
+                <li><a href="#faq" class="navbar-links"><span>Middle Man</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- --------------------------------
+            The Coupler
+        -------------------------------- -->
+        <section class="banner column-4" id="banner">
+            <div class="text-area">
+                <div class="text-part">
+                    <h1> <span>The Couplers</span> </h1>
+                    <p>The Couplers adalah salah satu kategori dalam Code Smell yang mengacu pada keadaan 
+                        di mana kelas atau komponen dalam sistem terlalu erat terikat satu sama lain. 
+                        Ini dapat terjadi dalam bentuk ketergantungan yang berlebihan antara kelas atau modul, 
+                        yang membuat perubahan pada satu bagian memerlukan modifikasi besar-besaran pada bagian lainnya. 
+                        Coupling yang tinggi dapat membuat kode sulit dipahami, sulit dikelola, dan sulit diuji.</p>
+                    <p>
+                        Couplers sering kali mengarah pada kurangnya abstraksi yang baik dan penggunaan 
+                        prinsip-prinsip desain yang buruk dalam pengembangan perangkat lunak. 
+                        Ini dapat menyebabkan kode yang rapuh dan sulit untuk diperbaiki atau diperbarui di masa depan.
+
+                    </p>
+                </div>
+            
+            </div>
+            <div class="image-area">
+                <img src="app/images/causal.png" alt="">
+                <!-- <img src="app/images/ba1.png" alt=""> -->
+                <div class="circle"></div>
+               
+            </div>
+
+        </section>
+        <!-- -------------------------------- -->
+        <!-- Feature Envy  -->
+        <!-- -------------------------------- -->
+
+        <section class="features" id="features">
+            <div class="custom-shape-divider-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="main-container column-2">
+                <div class="gbr1">
+                    <img src="app/images/feature-envy-01.png">
+                </div>
+                <div class="text-part">
+                    <h1>Feature Envy</h1>
+                    <p>Feature Envy adalah bad code smell yang terjadi ketika sebuah objek menggunakan 
+                        data atau metode dari objek lain lebih dari yang seharusnya. 
+                        Ini menandakan bahwa objek tersebut "terlalu menyukai" atau terlalu bergantung pada objek lain, 
+                        dan mungkin menunjukkan masalah dalam desain atau struktur program.
+                    </p>
+
+        
+                        <div class="card card3">
+                            
+                            <h3>Kapan Terjadinya?</h3>
+                            <p>Feature Envy terjadi ketika sebuah objek mengakses atau menggunakan data dan metode dari 
+                                objek lain secara berlebihan, tanpa melakukan banyak pekerjaan sendiri.
+                            </p>
+                            <h3>Cara Menangani?</h3>
+                            <p>
+                                Untuk menangani Feature Envy, Anda dapat memindahkan logika atau operasi yang terkait 
+                                dengan objek yang "disukai" ke dalam objek yang seharusnya melakukan pekerjaan tersebut. 
+                                Ini dapat dilakukan dengan menerapkan prinsip-prinsip pemrograman 
+                                berorientasi objek seperti Encapsulation dan Delegation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-part">
+                    <h3>Contoh Sebelum Refactor :</h3>
+                    <hr class="line">
+                    <img src="app/images/featureEnvyPre.jpg" alt="Contoh Sebelum Refactor">
+                    <hr class="line">
+                    <h3>Alasan :</h3>
+                    <p>1. Metode calculateTotalWithDiscount() pada kelas Order:
+                        Metode ini seharusnya bertanggung jawab untuk menghitung total pesanan dengan potongan harga. 
+                        Namun, metode tersebut lebih tertarik pada data yang dimiliki oleh objek Customer daripada data miliknya sendiri.
+                        Ini menunjukkan bahwa Order tidak memiliki cukup kemandirian dan terlalu mengandalkan data dari objek Customer. 
+                        Ini adalah contoh yang jelas dari "Feature Envy", di mana Order tampaknya lebih "menginginkan" atau "membutuhkan" 
+                        data yang dimiliki oleh Customer daripada data yang dimilikinya sendiri.
+                        </p>
+                        <p>
+                        2. Penggunaan customer.getDiscount() dalam calculateTotalWithDiscount():
+                        Metode getDiscount() dipanggil dari objek customer dalam calculateTotalWithDiscount().
+                        Hal ini menunjukkan bahwa Order "menyukai" fitur yang dimiliki oleh Customer, 
+                        yaitu diskon, lebih dari yang seharusnya. Order seharusnya lebih fokus pada perhitungan 
+                        total pesanan sendiri tanpa terlalu tergantung pada informasi internal Customer.
+                        </p>
+                        <p>3. Penggunaan totalAmount dari Order dalam calculateTotalWithDiscount():
+                            Metode tersebut menggunakan variabel totalAmount yang dimiliki oleh objek Order. 
+                            Ini menunjukkan bahwa Order memberikan informasi internalnya kepada Customer, 
+                            yang tidak ideal dari segi desain objek yang baik.</p>
+                    <h3>Contoh Sesudah Refactor :</h3>
+                    <hr class="line">
+                    <img src="app/images/featureEnvyAft.jpg" alt="Contoh Sesudah Refactor">
+                    <hr class="line">
+                    <h3>Alasan Refactoring :</h3>
+                    <p>Logika perhitungan diskon dari kelas Order ke kelas Customer, 
+                        sehingga Order tidak lagi memiliki "kesenangan fitur" terhadap Customer.
+                    </p>
+                </div>
+        </section>
+        <!-- -------------------------------- -->
+        <!-- Inappropriate Intimacy  -->
+        <!-- -------------------------------- -->
+
+        <section id="courses" class="courses">
+            <div class="text-part">
+                <h1>Inappropriate Intimacy</h1>
+                <div class="overlay-text">
+                    <h2>Inappropriate Intimacy</h2>
+                </div>
+                <img src="app/images/inappropriate-intimacy-01.png">
+                <p>"Inappropriate Intimacy" adalah salah satu kategori dari "Bad Code Smell" dalam paradigma pemrograman. 
+                    Ini terjadi ketika dua kelas atau modul saling bergantung secara berlebihan, 
+                    melewati lebih banyak informasi atau tahu terlalu banyak tentang internal satu sama lain. 
+                    Hal ini dapat mengakibatkan kode yang sulit dipahami, sulit dipelihara, dan sulit untuk mengubahnya 
+                    di masa mendatang karena setiap perubahan pada satu kelas mempengaruhi banyak kelas lainnya.
+                </p>
+                <div class="card card3">
+                    <h3>Kapan Terjadinya?</h3>
+                    <p>Inappropriate Intimacy terjadi ketika ada terlalu banyak pertukaran data atau panggilan metode 
+                        antara dua kelas yang seharusnya tidak terlalu erat terhubung.
+
+                    </p>
+                    <h3>Cara Menangani?</h3>
+                    <p>
+                        Untuk menangani masalah ini, Anda dapat menggunakan prinsip-prinsip desain yang lebih baik, 
+                        seperti prinsip kohesi dan kelas terpisah (separation of concerns). 
+                        Anda dapat menggunakan pola desain seperti Dependency Injection untuk mengurangi ketergantungan antar kelas. 
+                        Pemisahan logika bisnis dari kode infrastruktur juga dapat membantu.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="image-part">
+                <h3>Contoh Sebelum Refactor :</h3>
+                <hr class="line">
+                <img src="app/images/InappIntimPre.jpg" alt="Contoh Sebelum Refactor">
+                <hr class="line">
+                <h3>Alasan :</h3>
+                    <p>Kelas A dan B terlalu erat terhubung karena kelas A langsung membuat instance 
+                    kelas B dan memanggil metodenya. Hal ini menyebabkan kelas A bergantung pada implementasi internal kelas B.
+                    </p>
+        
+                <h3>Contoh Sesudah Refactor :</h3>
+                <hr class="line">
+                <img src="app/images/IanappIntimAft.jpg" alt="Contoh Sesudah Refactor">
+                <hr class="line">
+                <h3>Alasan Refactoring :</h3>
+                <p>Dalam kode refaktor, kelas A tidak lagi langsung tergantung pada kelas B. 
+                    Sebaliknya, kelas A menerima kelas B sebagai interface. 
+                    Ini memungkinkan kelas A untuk bekerja dengan berbagai implementasi kelas B, 
+                    dan kelas A tidak perlu tahu detail internal kelas B. 
+                    Hal ini meningkatkan fleksibilitas dan memisahkan kelas-kelas yang semula terlalu erat terhubung.
+                </p>
+            </div>
+            
+        </section>
+
+
+        <!-- -------------------------------- -->
+        <!-- Message Chain  -->
+        <!-- -------------------------------- -->
+
+        <section id="expert" class="expert">
+            <div class="expert_text">
+                <br> <br>
+                <h1>Message Chain</h1>
+               
+                <p>
+                    "Message Chain" adalah subkategori dari "Bad Code Smell" dalam paradigma pemrograman. 
+                    Ini terjadi ketika kelas atau modul memanggil metode berantai pada objek lain, 
+                    yang pada gilirannya memanggil metode pada objek lain lagi, dan seterusnya. 
+                    Hal ini dapat menyebabkan ketergantungan yang terlalu dalam antara 
+                    kelas-kelas tersebut dan membuat kode sulit dipahami.
+                </p>
+            </div>
+            <img src="app/images/message-chains-01.png">
+            <div class="expert_main">
+                <!-- card 2 -->
+                <div class="card card-2">
+                    <h3>Kapan Terjadinya?</h3>
+                    <p>Message Chain terjadi ketika sebuah kelas memanggil metode pada objek lain, 
+                        yang kemudian memanggil metode pada objek lain lagi, dan seterusnya.
+
+                    </p>
+                    <h3>Cara Menangani?</h3>
+                    <p>
+                        Untuk menangani message chain, Anda dapat mempertimbangkan untuk menggunakan 
+                        pola desain seperti Facade untuk menyembunyikan kompleksitas dari panggilan metode berantai. 
+                        Anda juga dapat mempertimbangkan untuk membagi logika ke dalam kelas-kelas yang lebih kecil dan lebih spesifik.
+
+                    </p>
+                </div>
+
+                <div class="image-part">
+                    <h3>Contoh Sebelum Refactor :</h3>
+                    <hr class="line">
+                    <img src="app/images/MessgChainPre.jpg" alt="Contoh Sebelum Refactor">
+                    <hr class="line">
+                    <h3>Alasan :</h3>
+                        <p>Kelas A memiliki method getB() yang mengembalikan objek kelas B, 
+                            kemudian kelas B memiliki method getC() yang mengembalikan objek kelas C. 
+                            Jika kita ingin melakukan sesuatu dengan kelas C, kita harus melewati objek kelas A dan B terlebih dahulu. 
+                            Ini membentuk sebuah message chain yang tidak perlu dan dapat menyulitkan pemahaman kode.
+
+                        </p>
+            
+                    <h3>Contoh Sesudah Refactor :</h3>
+                    <hr class="line">
+                    <img src="app/images/MessgChainAft.jpg" alt="Contoh Sesudah Refactor">
+                    <hr class="line">
+                    <h3>Alasan Refactoring :</h3>
+                    <p>Dalam kode refaktor, kelas A langsung menggunakan kelas C untuk melakukan sesuatu. 
+                        Tidak perlu melewati kelas B terlebih dahulu. 
+                        Ini menyederhanakan struktur dan menghilangkan message chain yang tidak perlu. 
+                        Kode menjadi lebih mudah dipahami dan dipelihara.
+
+                    </p>
+                </div>
+            </div>
+                
+        </section>
+
+
+        <!-- -------------------------------- -->
+        <!-- Middle Man -->
+        <!-- -------------------------------- -->
+        <section class="faq" id="faq">
+            <div class="faq_text">
+                <h1>Middle Man</h1>
+                <hr class="line">
+                <img src="app/images/middle-man-01.png">
+            </div>
+            <div class="faq_main">
+                <div class="accordian">
+                    <div class="accordian_item">
+                        <a href="#q1" class="link">
+                            <p>Definisi</p>
+                            <ion-icon class="down" name="caret-down-outline"></ion-icon>
+                            <ion-icon class="up" name="caret-up-outline"></ion-icon>
+                        </a>
+                        <div class="answer">
+                            <p>
+                                Middle Man adalah subkategori dari bad code smell yang terjadi ketika sebuah kelas 
+                                bertindak sebagai mediator atau perantara yang tidak perlu antara kelas atau komponen lain.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordian_item">
+                        <a href="#q2" class="link">
+                            <p>Kapan Terjadinya?</p>
+                            <ion-icon class="down" name="caret-down-outline"></ion-icon>
+                            <ion-icon class="up" name="caret-up-outline"></ion-icon>
+                        </a>
+                        <div class="answer">
+                            <p>
+                                Middle Man smells biasanya terjadi ketika sebuah kelas bertindak sebagai 
+                                perantara atau mediator antara dua kelas lain, tanpa menambahkan fungsionalitas atau logika yang signifikan.
+
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordian_item">
+                        <a href="#q3" class="link">
+                            <p>Cara Menangani?</p>
+                            <ion-icon class="down" name="caret-down-outline"></ion-icon>
+                            <ion-icon class="up" name="caret-up-outline"></ion-icon>
+                        </a>
+                        <div class="answer">
+                            <p>
+                                1. Inline Methods: Jika metode-metode dalam kelas perantara hanya melakukan 
+                                delegasi ke kelas lain, pertimbangkan untuk menghapus kelas perantara 
+                                dan langsung memanggil metode-metode kelas target.
+                            </p>
+                            <p>
+                                2. Extract Class: Jika kelas perantara melakukan beberapa logika selain delegasi, 
+                                pertimbangkan untuk mengekstrak logika ini ke dalam kelas terpisah.
+                            </p>
+                            <p>
+                                3. Replace Delegation with Inheritance: Dalam beberapa kasus, jika kelas 
+                                perantara hanya melakukan delegasi ke kelas lain tanpa menambahkan logika tambahan, 
+                                Anda mungkin mempertimbangkan untuk mengganti delegasi dengan pewarisan.
+                            </p>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="image-part">
+                <h3>Contoh Sebelum Refactor :</h3>
+                <hr class="line">
+                <img src="app/images/midManPre.jpg" alt="Contoh Sebelum Refactor">
+                <hr class="line">
+                <h3>Alasan :</h3>
+                    <p>Dalam kode ini, MiddleManService hanya melakukan delegasi panggilan metode 
+                        ke ThirdPartyService, bertindak sebagai perantara tanpa menambahkan 
+                        fungsionalitas yang signifikan.
+                    </p>
+        
+                <h3>Contoh Sesudah Refactor :</h3>
+                <hr class="line">
+                <img src="app/images/midManAft.jpg" alt="Contoh Sesudah Refactor">
+                <hr class="line">
+                <h3>Alasan Refactoring :</h3>
+                <p>Dalam kode yang sudah direfaktor, kelas MiddleManService dihilangkan sama sekali, 
+                    dan klien langsung menggunakan ThirdPartyService, menghilangkan perantara yang tidak perlu. 
+                    Refaktorisasi ini menyederhanakan basis kode dan menghilangkan bau perantara.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+    
+    <script src="app/js/script.js" defer></script>
+</body>
+
+
+
+</html>
